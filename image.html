@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ledger — AI Image Generator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="image.css">
+</head>
+<body>
+
+  <div class="eyebrow">no signup &middot; no key &middot; free model</div>
+  <h1>Ledger<span>.</span></h1>
+  <p class="sub">Describe an image. Each generation is logged as an entry below, rendered by <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a>'s free Flux model — running straight from this page.</p>
+
+  <div class="panel" id="panel">
+    <textarea id="prompt" placeholder="a lighthouse at dusk, storm clouds, long exposure, cinematic" maxlength="600"></textarea>
+    <div class="row" id="styleRow">
+      <button class="chip active" data-style="">No style</button>
+      <button class="chip" data-style="cinematic film still, dramatic lighting,">Cinematic</button>
+      <button class="chip" data-style="watercolor painting, soft edges,">Watercolor</button>
+      <button class="chip" data-style="pixel art, 16-bit,">Pixel art</button>
+      <button class="chip" data-style="studio product photography, soft shadows,">Studio photo</button>
+      <button class="chip" data-style="ink line art, minimal,">Line art</button>
+    </div>
+    <div class="controls">
+      <div class="ratio-group" id="ratioGroup">
+        <button class="ratio-btn active" data-r="1:1" title="Square"><span></span></button>
+        <button class="ratio-btn" data-r="16:9" title="Wide"><span></span></button>
+        <button class="ratio-btn" data-r="9:16" title="Tall"><span></span></button>
+      </div>
+      <button class="go" id="goBtn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 3l3 7-3 7 16-7z"/></svg>
+        Log entry
+      </button>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="placeholder" id="placeholder">no entry yet</div>
+  </div>
+
+  <div class="meta">
+    <span id="seedInfo">&nbsp;</span>
+    <button id="regenBtn" style="display:none;">↻ re-log entry</button>
+  </div>
+
+  <footer>
+    Ledger keeps no copy of what you generate — nothing is stored server-side. Free tier, no API key needed, built on the <a href="https://pollinations.ai" target="_blank" rel="noopener">Pollinations</a> public image API.
+  </footer>
+
+<script src="image.js"></script>
+</body>
+</html>
